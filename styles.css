@@ -8,30 +8,28 @@
 body {
     width: 375px;
     margin: 0 auto;
+    -webkit-text-size-adjust: 100%;
 }
 
 /* Шапка */
 .header-background {
     position: relative;
     width: 100%;
-    height: 60px; /* Высота шапки */
-    background: white; /* Белый фон */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень внизу */
+    height: 60px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
     position: relative;
-    z-index: 10; /* Добавляем z-index чтобы тень была поверх контента */
-}
-
-.header-bg {
-    display: none;
+    z-index: 10;
 }
 
 .logo {
-    height: 40px; /* Размер логотипа */
+    height: 40px;
     width: auto;
+    -webkit-user-drag: none;
 }
 
 .burger-menu {
@@ -41,6 +39,7 @@ body {
     cursor: pointer;
     padding: 10px;
     z-index: 2;
+    -webkit-appearance: none;
 }
 
 .burger-menu .line {
@@ -48,30 +47,28 @@ body {
     width: 24px;
     height: 2px;
     background-color: #282828;
-    margin: 6px 0; /* Увеличиваем отступ между линиями */
-    transition: all 0.3s ease; /* Делаем анимацию более плавной */
+    margin: 6px 0;
+    transition: all 0.3s ease;
     position: relative;
-    transform-origin: center; /* Центр вращения */
+    transform-origin: center;
 }
 
-/* Анимация крестика при наведении или фокусе */
 .burger-menu:hover .line-1,
 .burger-menu:focus .line-1 {
-    transform: translateY(8px) rotate(45deg); /* Корректируем смещение */
+    transform: translateY(8px) rotate(45deg);
 }
 
 .burger-menu:hover .line-2,
 .burger-menu:focus .line-2 {
     opacity: 0;
-    transform: scale(0); /* Добавляем анимацию исчезновения */
+    transform: scale(0);
 }
 
 .burger-menu:hover .line-3,
 .burger-menu:focus .line-3 {
-    transform: translateY(-8px) rotate(-45deg); /* Корректируем смещение */
+    transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Стили для всплывающего сообщения */
 .menu-message {
     position: absolute;
     top: 100%;
@@ -88,14 +85,12 @@ body {
     margin-top: 5px;
 }
 
-/* Показываем сообщение при наведении или фокусе */
 .burger-menu:hover .menu-message,
 .burger-menu:focus .menu-message {
     opacity: 1;
     visibility: visible;
 }
 
-/* Треугольник для сообщения */
 .menu-message::before {
     content: '';
     position: absolute;
@@ -111,13 +106,14 @@ body {
 .hero-background {
     position: relative;
     width: 100%;
-    margin-top: -4px; /* Немного поднимаем контент чтобы тень накладывалась */
+    margin-top: -4px;
 }
 
 .hero-bg {
-		margin-top: 0px;
+    margin-top: 0px;
     width: 100%;
     display: block;
+    -webkit-user-drag: none;
 }
 
 .hero-content {
@@ -143,6 +139,7 @@ h1 {
     font-size: 23px;
     font-weight: 700;
     margin-bottom: 15px;
+    -webkit-font-smoothing: antialiased;
 }
 
 h1 span {
@@ -164,6 +161,7 @@ h1 span {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    -webkit-appearance: none;
 }
 
 .cta-button:hover {
@@ -176,113 +174,85 @@ h1 span {
     margin-top: 0;
     margin-left: 15px;
     flex-shrink: 0;
+    -webkit-user-drag: none;
 }
 
 .separator {
     width: 100%;
     display: block;
-}
-
-/* Секция "Немного о нас" */
-.about-us {
-    padding: 20px;
-    text-align: center; /* Выравниваем заголовок по центру */
-}
-
-.about-us-title {
-    color: #006CDC;
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
-
-.about-us-text {
-    text-align: left; /* Выравниваем текст параграфов по левому краю */
-    margin-bottom: 10px;
-    padding-left: 30px; /* Добавляем отступ слева для выравнивания */
-    position: relative; /* Для позиционирования иконки */
-    font-size: 14px;
-}
-
-.about-us-text span {
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #006CDC; /* Цвет иконки */
-}
-
-.about-us-separator {
-		width: 100%;
-		display: block; /* Отступ сверху для разделителя */
+    -webkit-user-drag: none;
 }
 
 /* Секция "О направлениях подготовки" */
 .directions {
-    padding: 20px 0; /* Вертикальные отступы */
+    padding: 20px 0;
     text-align: center;
 }
 
 .directions-title {
     font-size: 20px;
     font-weight: 700;
-    color: #006CDC; /* Цвет текста заголовка, можно изменить */
+    color: #006CDC;
+    -webkit-font-smoothing: antialiased;
 }
 
 .cards-container {
     display: flex;
-    flex-direction: column; /* Карточки одна под другой */
-    align-items: center; /* Центрируем карточки по горизонтали */
-    margin-top: 15px; /* Отступ от заголовка */
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
 }
 
 .card-image {
-    width: 85%; /* Задаем ширину карточек, можно настроить */
-    max-width: 300px; /* Максимальная ширина карточки */
-    margin-bottom: 10px; /* Отступ между карточками */
+    width: 85%;
+    max-width: 300px;
+    margin-bottom: 10px;
+    -webkit-user-drag: none;
 }
 
 .card-image:last-child {
-    margin-bottom: 0; /* Убираем отступ у последней карточки */
+    margin-bottom: 0;
 }
 
 .directions-separator {
-    margin-top: 20px; /* Отступ сверху от карточек */
+    margin-top: 20px;
     width: 100%;
     display: block;
 }
 
 .advantages-image {
-    display: block; /* Убираем лишние отступы */
-    margin: 20px auto 0 auto; /* Отступ сверху и центрирование */
-    width: 90%; /* Ширина изображения, можно настроить */
-    max-width: 340px; /* Максимальная ширина */
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 90%;
+    max-width: 340px;
+    -webkit-user-drag: none;
 }
 
-/* Список преимуществ */
 .advantages-list {
-    padding: 0 20px; /* Отступы по бокам */
+    padding: 0 20px;
 }
 
 .advantage-item {
     display: flex;
     align-items: center;
-    text-align: center; /* Выравниваем текст по центру */
+    text-align: center;
     font-size: 14px;
     color: #333;
     margin-bottom: 10px;
+    -webkit-font-smoothing: antialiased;
 }
 
 .advantage-item span {
-    font-size: 18px; /* Размер галочек */
-    line-height: 1; /* Выравниваем галочки */
+    font-size: 18px;
+    line-height: 1;
 }
 
 .advantage-item span:first-child {
-    margin-right: 10px; /* Отступ справа от левой галочки */
+    margin-right: 10px;
 }
 
 .advantage-item span:last-child {
-    margin-left: 10px; /* Отступ слева от правой галочки */
+    margin-left: 10px;
 }
 
 .advantage-item:last-child {
@@ -292,20 +262,21 @@ h1 span {
 .advantages-list-separator {
     width: 100%;
     display: block;
-    margin-top: 20px; /* Отступ от списка преимуществ */
+    margin-top: 20px;
 }
 
 /* Секция FAQ */
 .faq {
-    padding: 10px 0; /* Вертикальные отступы */
+    padding: 10px 0;
     text-align: center;
 }
 
 .faq-title {
     font-size: 20px;
     font-weight: 700;
-    color: #006CDC; /* Синий цвет заголовка */
+    color: #006CDC;
     margin-bottom: 5px;
+    -webkit-font-smoothing: antialiased;
 }
 
 .faq-image {
@@ -313,15 +284,15 @@ h1 span {
     margin: 0 auto;
     width: 90%;
     max-width: 250px;
+    -webkit-user-drag: none;
 }
 
-/* Карточки вопросов */
 .question-cards {
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px; /* Отступ между карточками */
+    gap: 15px;
 }
 
 .question-card {
@@ -333,6 +304,7 @@ h1 span {
 .question-card-bg {
     width: 100%;
     display: block;
+    -webkit-user-drag: none;
 }
 
 .question-text {
@@ -346,6 +318,7 @@ h1 span {
     font-size: 14px;
     font-weight: 400;
     padding: 10px;
+    -webkit-font-smoothing: antialiased;
 }
 
 .question-text-title {
@@ -358,7 +331,7 @@ h1 span {
 }
 
 .footer-background {
-		box-shadow: 0 2px 4px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px 5px rgba(0, 0, 0, 0.1);
     position: relative;
     width: 100%;
 }
@@ -366,6 +339,7 @@ h1 span {
 .footer-bg {
     width: 100%;
     display: block;
+    -webkit-user-drag: none;
 }
 
 .footer-content {
@@ -391,6 +365,7 @@ h1 span {
     color: white;
     font-size: 9px;
     line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
 }
 
 .footer-block p {
@@ -415,6 +390,7 @@ h1 span {
 .copyright {
     color: white;
     font-size: 10px;
+    -webkit-font-smoothing: antialiased;
 }
 
 .copyright p {
@@ -423,7 +399,7 @@ h1 span {
 
 .social-icons {
     display: flex;
-    gap: 10px; /* Отступ между иконками */
+    gap: 10px;
     align-items: center;
 }
 
@@ -433,12 +409,12 @@ h1 span {
 }
 
 .social-icon {
-    width: 10px; /* Размер иконок */
+    width: 10px;
     height: 10px;
     display: block;
+    -webkit-user-drag: none;
 }
 
-/* Добавляем плавный скролл для всей страницы */
 html {
     scroll-behavior: smooth;
 }
