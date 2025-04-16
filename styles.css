@@ -3,6 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Helvetica Neue', sans-serif;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 body {
@@ -30,6 +32,7 @@ body {
     height: 40px;
     width: auto;
     -webkit-user-drag: none;
+    image-rendering: crisp-edges;
 }
 
 .burger-menu {
@@ -419,50 +422,16 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Общие улучшения для SVG */
+/* Для всех изображений SVG добавим */
 img[src$=".svg"] {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
     shape-rendering: crispEdges;
 }
 
-/* Для логотипа */
-.logo {
-    height: 40px;
-    width: auto;
-    -webkit-user-drag: none;
-    transform: translateZ(0); /* Аппаратное ускорение */
-    backface-visibility: hidden;
-}
-
-/* Для всех SVG изображений */
-.hero-bg,
-.separator,
-.card-image,
-.advantages-image,
-.faq-image,
-.question-card-bg,
-.footer-bg,
-.social-icon {
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    image-rendering: crisp-edges;
-}
-
-/* Для hero изображения */
-.hero-image {
-    width: 150px;
-    height: auto;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    image-rendering: crisp-edges;
-}
-
-/* Для разделителей */
-.separator {
-    width: 100%;
-    height: auto;
-    display: block;
-    -webkit-user-drag: none;
-    transform: translateZ(0);
+/* Для улучшения качества SVG в Firefox */
+@supports (-moz-appearance:none) {
+    img[src$=".svg"] {
+        image-rendering: crisp-edges;
+    }
 }
