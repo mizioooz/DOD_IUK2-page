@@ -3,8 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Helvetica Neue', sans-serif;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
 }
 
 body {
@@ -32,7 +30,6 @@ body {
     height: 40px;
     width: auto;
     -webkit-user-drag: none;
-    image-rendering: crisp-edges;
 }
 
 .burger-menu {
@@ -420,18 +417,4 @@ h1 span {
 
 html {
     scroll-behavior: smooth;
-}
-
-/* Для всех изображений SVG добавим */
-img[src$=".svg"] {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    shape-rendering: crispEdges;
-}
-
-/* Для улучшения качества SVG в Firefox */
-@supports (-moz-appearance:none) {
-    img[src$=".svg"] {
-        image-rendering: crisp-edges;
-    }
 }
