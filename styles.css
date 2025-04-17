@@ -426,14 +426,10 @@ html {
     max-width: 320px;
     height: 120px;
     margin-bottom: 15px;
-    position: relative;
-    cursor: pointer;
-    display: block;
 }
 
-/* Скрываем чекбокс */
-.flip-toggle {
-    display: none;
+.flip-card:last-child {
+    margin-bottom: 0;
 }
 
 .flip-card-inner {
@@ -444,23 +440,8 @@ html {
     transform-style: preserve-3d;
 }
 
-/* При нажатии (чекбокс активен) поворот карточки */
-.flip-toggle:checked + .flip-card-inner {
+.flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
-    animation: flipback 5s forwards;
-}
-
-/* Анимация возврата назад */
-@keyframes flipback {
-    0% {
-        transform: rotateY(180deg);
-    }
-    90% {
-        transform: rotateY(180deg);
-    }
-    100% {
-        transform: rotateY(0deg);
-    }
 }
 
 .flip-card-front, .flip-card-back {
@@ -469,17 +450,10 @@ html {
     height: 100%;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    border-radius: 10px;
 }
 
 .flip-card-front {
-    background: white;
     z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .flip-card-back {
@@ -489,8 +463,28 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
-    font-weight: bold;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 15px;
+    text-align: center;
+}
+
+.answer-content {
+    width: 90%;
+    padding: 10px;
+}
+
+.answer-content p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.question-card-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .question-card {
@@ -500,10 +494,17 @@ html {
 }
 
 .question-text {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
     text-align: center;
-    font-size: 14px;
     color: #333;
+    font-size: 14px;
     font-weight: 400;
+    padding: 10px;
+    -webkit-font-smoothing: antialiased;
 }
 
 .question-text-title {
