@@ -418,3 +418,83 @@ h1 span {
 html {
     scroll-behavior: smooth;
 }
+
+/* Стили для переворачивающихся карточек */
+.flip-card {
+    perspective: 1000px;
+    width: 90%;
+    max-width: 320px;
+    height: 120px;
+    margin-bottom: 15px;
+}
+
+.flip-card:last-child {
+    margin-bottom: 0;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.flip-card-front {
+    z-index: 2;
+}
+
+.flip-card-back {
+    background-color: #006CDC;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.question-card-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.question-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.question-text {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.question-text-title {
+    font-weight: 800;
+}
